@@ -1,0 +1,16 @@
+[package]
+name = "kernel"
+version = "0.1.0"
+edition = "2021"
+
+[dependencies]
+linked_list_allocator = "0.10.5"
+multiboot2 = { path = "../multiboot2" }
+spin = "0.5.2"
+
+[profile.dev]
+panic = "abort"
+
+[profile.release]
+panic = "abort"
+lto = true
